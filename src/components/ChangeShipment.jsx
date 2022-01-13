@@ -35,29 +35,44 @@ export default function ChangeShipment({ firestore, shipment }) {
         }
     }
 
+    // if previous inventory stored, load previous shipment
+    const loadPrevious = () => {
+        if (shipmentList && shipmentList.length > 1 && shipmentList[0].counter > 0) {
+            changeShipment(-1);
+        }
+    }
+
+    // if next inventory stored, load next shipment
+    const loadNext = () => {
+        if (shipmentList && shipmentList.length > 1 && shipmentList.length > shipmentList[0].counter + 1) {
+            changeShipment(1);
+        }
+    }
+
+    // if atleast one inventory set to ship, append inventory to collection
+    const saveCurrent = () => {
+        if (shipment.length > 0) {
+            if (shipmentList) {
+                if (shipmentList.length === 0) {
+                    addCollection(collectionShipment, { counter: 0, timeStamp: firebase.firestore.FieldValue.serverTimestamp() })
+                }
+
+                addCollection(collectionShipment, { data: inventory, timeStamp: firebase.firestore.FieldValue.serverTimestamp() });
+                removeShipment();
+            }
+        }
+    }
+
     return (
         <div className="change">
             <button className={shipmentList && shipmentList.length > 1 && shipmentList[0].counter > 0 ? 'enabled' : 'disabled'} onClick={() => {
-                if (shipmentList && shipmentList.length > 1 && shipmentList[0].counter > 0) {
-                    changeShipment(-1);
-                }
+                loadPrevious();
             }}>Load Previous Shipment</button>
             <button className={shipmentList && shipmentList.length > 1 && shipmentList.length > shipmentList[0].counter + 1 ? 'enabled' : 'disabled'} onClick={() => {
-                if (shipmentList && shipmentList.length > 1 && shipmentList.length > shipmentList[0].counter + 1) {
-                    changeShipment(1);
-                }
+                loadNext();
             }}>Load Next Shipment</button>
             <button className={shipment.length > 0 ? 'enabled' : 'disabled'} onClick={() => {
-                if (shipment.length > 0) {
-                    if (shipmentList) {
-                        if (shipmentList.length === 0) {
-                            addCollection(collectionShipment, { counter: 0, timeStamp: firebase.firestore.FieldValue.serverTimestamp() })
-                        }
-
-                        addCollection(collectionShipment, { data: inventory, timeStamp: firebase.firestore.FieldValue.serverTimestamp() });
-                        removeShipment();
-                    }
-                }
+                saveCurrent();
             }}>Save Current Shipment</button>
         </div>
     )
