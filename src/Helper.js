@@ -10,6 +10,10 @@ const copyArr = (arr, removeIdx) => {
     return newArr;
 }
 
+const padDollar = number => {
+    return `$ ${(Math.round(number * 100) / 100).toFixed(2)}`
+}
+
 const showHideCaption = (caption, label) => {
     caption.current.style.display = 'block';
     caption.current.textContent = label;
@@ -87,4 +91,4 @@ const reverseArr = arr => {
     }
 }
 
-export { copyArr, showHideCaption, capitalize, addCollection, updateCollection, deleteCollection, deleteAllCollection, addAllCollection, translateRef, reverseArr };
+export { copyArr, showHideCaption, capitalize, addCollection, updateCollection, deleteCollection, deleteAllCollection, addAllCollection, translateRef, reverseArr, padDollar };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { updateCollection, deleteCollection } from '../Helper';
+import { updateCollection, deleteCollection, padDollar } from '../Helper';
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 export default function Inventory({ firestore }) {
@@ -48,7 +48,7 @@ export default function Inventory({ firestore }) {
                                 <tr key={index}>
                                     <td><input type="checkbox" checked={item.ship} onChange={() => updateCollection(collectionInventory, item.id, { ship: !item.ship })}></input></td>
                                     <td>{item.product}</td>
-                                    <td>{item.price}</td>
+                                    <td>{padDollar(item.price)}</td>
                                     <td>{item.quantity}</td>
                                     <td className="edit">
                                         <button onClick={() => changeQuantity(index, true)}>+</button>
