@@ -1,3 +1,6 @@
+// This App is Deployed. See Live Site at:
+// https://inventory-tracker-app.netlify.app
+
 import React from 'react';
 import { translateRef, addCollection, updateCollection, showHideCaption } from '../Helper';
 import { useCollectionData } from "react-firebase-hooks/firestore";

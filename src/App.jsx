@@ -1,3 +1,6 @@
+// This App is Deployed. See Live Site at:
+// https://inventory-tracker-app.netlify.app
+
 // firebase imports
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from "firebase/compat/app";
@@ -18,7 +21,6 @@ import Inventory from './components/Inventory';
 import Shipment from './components/Shipment';
 // top right
 import ChangeShipment from './components/ChangeShipment';
-
 
 // configure firebase connection
 firebase.initializeApp({

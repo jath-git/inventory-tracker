@@ -1,3 +1,6 @@
+// This App is Deployed. See Live Site at:
+// https://inventory-tracker-app.netlify.app
+
 import firebase from "firebase/compat/app";
 
 const copyArr = (arr, removeIdx) => {
