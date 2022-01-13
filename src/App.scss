@@ -1,0 +1,117 @@
+* {
+    font-family: "Courier New", Courier, monospace;
+}
+
+header {
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    background-color: lightblue;
+    padding: 2% 0;
+    text-transform: uppercase;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.caption {
+    text-align: center;
+    font-size: 1rem;
+    background-color: antiquewhite;
+    width: fit-content;
+    margin: auto;
+    padding: 1% 3%;
+    margin-top: 1%;
+    display: none;
+}
+
+.change {
+    text-align: right;
+    margin-top: 0.5%;
+
+    button {
+        text-transform: uppercase;
+        padding: 0.5% 3%;
+        font-size: 1rem;
+        border-radius: 50px;
+        text-decoration: none;
+    }
+
+    .enabled {
+        background-color: lightblue;
+        cursor: pointer;
+    }
+
+    .disabled {
+        background-color: lightgray;
+        cursor: not-allowed;
+    }
+}
+
+.form {
+    margin: auto;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 3%;
+
+    .type {
+        font-size: 1rem;
+        padding: 0.2% 4%;
+        border: solid black 1px;
+        width: 100%;
+    }
+
+    .submit {
+        cursor: pointer;
+        font-size: 1rem;
+        border: solid black 1px;
+        border-radius: 50px;
+        padding: 1% 5%;
+        background-color: lightblue;
+    }
+}
+
+.full {
+    width: 100%;
+
+    .title {
+        margin-top: 5%;
+        font-size: 1.5rem;
+    }
+
+    .list,
+    .shipment {
+        margin-top: 2%;
+
+        thead {
+            background-color: lightblue;
+        }
+
+        th,
+        td {
+            text-align: center;
+            border: solid black 1px;
+        }
+
+        .modify {
+            cursor: pointer;
+        }
+    }
+
+    .list {
+        width: 100%;
+    }
+    .shipment {
+        width: 80%;
+        float: right;
+    }
+}
