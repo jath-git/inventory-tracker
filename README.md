@@ -1,14 +1,17 @@
 ### This App is Deployed. See Live Site at:
 [https://inventory-tracker-app.netlify.app](https://inventory-tracker-app.netlify.app)
 
+<br/>
+
 ### Instructions
-[Must have Node.js and NPM installed on you computer]
+Must have Node.js and NPM installed on you computer
 ### Download
-[Download Node.js installer at https://nodejs.org/en/download/ (includes NPM package ]manager)
+Download Node.js installer at https://nodejs.org/en/download/ <br/>
+Installer includes NPM package manager
 ### Verify Download
-[Run [node -v] and [npm -v] in terminal]
+Run [node -v] and [npm -v] in terminal
 ### Install Dependencies
-[Navigate to root of project in terminal]
-[Run [npm i] or [npm install]]
+Navigate to root of project in terminal <br/>
+Run [npm i] or [npm install]
 ### Run Application
-[Run [npm start]]
+Run [npm start]
