@@ -1,6 +1,12 @@
 ### This App is Deployed. See Live Site at:
 [https://inventory-tracker-app.netlify.app](https://inventory-tracker-app.netlify.app)
 
+### Features:
+- Create Shipments
+
+### View Backend Project at:
+[https://image-spacestagram.netlify.app](https://image-spacestagram.netlify.app)
+
 <br/>
 
 ### Instructions
