@@ -14,5 +14,5 @@ Run [node -v] and [npm -v] in terminal
 Navigate to root of project in terminal <br/>
 Run [npm i] or [npm install]
 ### Run Application
-Run [npm start]
+Run [npm start] <br/>
 Open http://localhost:3000 in web browser
