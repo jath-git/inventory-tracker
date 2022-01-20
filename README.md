@@ -15,3 +15,4 @@ Navigate to root of project in terminal <br/>
 Run [npm i] or [npm install]
 ### Run Application
 Run [npm start]
+Open http://localhost:3000 in web browser
