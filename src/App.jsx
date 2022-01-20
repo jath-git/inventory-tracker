@@ -24,12 +24,12 @@ import ChangeShipment from './components/ChangeShipment';
 
 // configure firebase connection
 firebase.initializeApp({
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_APP_ID,
+    apiKey: 'AIzaSyAkv42WSHvgkPPYhGoT0bzjpGwMUcw87PY',
+    authDomain: 'inventory-tracker-bf7d3.firebaseapp.com',
+    projectId: 'inventory-tracker-bf7d3',
+    storageBucket: 'inventory-tracker-bf7d3.appspot.com',
+    messagingSenderId: '600583102375',
+    appId: '1:600583102375:web:a78213a2fd59acecb2e082',
 });
 
 // configure firestore
