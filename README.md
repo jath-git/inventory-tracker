@@ -4,7 +4,7 @@
 ### Features:
 - Create Shipments
 
-### View Backend Project at:
+### View Frontend Project at:
 [https://image-spacestagram.netlify.app](https://image-spacestagram.netlify.app)
 
 <br/>
