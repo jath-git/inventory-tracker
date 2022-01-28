@@ -1,7 +1,8 @@
 // This App is Deployed. See Live Site at:
 // https://inventory-tracker-app.netlify.app
 
-import React from 'react'
+import React from 'react';
+import { padDollar } from '../Helper';
 
 export default function Shipment({ shipment }) {
     return (
@@ -21,7 +22,7 @@ export default function Shipment({ shipment }) {
                             return (
                                 <tr key={index}>
                                     <td>{item.product}</td>
-                                    <td>{item.price}</td>
+                                    <td>{padDollar(item.price)}</td>
                                     <td>{item.quantity}</td>
                                 </tr>
                             )
