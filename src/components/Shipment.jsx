@@ -2,12 +2,14 @@
 // https://inventory-tracker-app.netlify.app
 
 import React from 'react';
-import { padDollar } from '../Helper';
+import { getArrayTotal, padDollar } from '../Helper';
 
 export default function Shipment({ shipment }) {
     return (
         <div>
             <div className="title right">Shipment</div>
+            {shipment ? <div className="total right">{getArrayTotal(shipment)}</div> : null}
+
             <table className="shipment">
                 <thead>
                     <tr>

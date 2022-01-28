@@ -94,4 +94,15 @@ const reverseArr = arr => {
     }
 }
 
-export { copyArr, showHideCaption, capitalize, addCollection, updateCollection, deleteCollection, deleteAllCollection, addAllCollection, translateRef, reverseArr, padDollar };
+const getArrayTotal = (array) => {
+    let total = 0;
+    for (let item of array) {
+        if (isNaN(item.price)) {
+            return `Total: ${padDollar(0)}`;
+        }
+        total += item.price;
+    }
+    return `Total: ${padDollar(total)}`;
+}
+
+export { copyArr, showHideCaption, capitalize, addCollection, updateCollection, deleteCollection, deleteAllCollection, addAllCollection, translateRef, reverseArr, getArrayTotal, padDollar };

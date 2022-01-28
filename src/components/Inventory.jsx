@@ -2,7 +2,7 @@
 // https://inventory-tracker-app.netlify.app
 
 import React from 'react';
-import { updateCollection, deleteCollection, padDollar } from '../Helper';
+import { updateCollection, deleteCollection, padDollar, getArrayTotal } from '../Helper';
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 export default function Inventory({ firestore }) {
@@ -34,6 +34,8 @@ export default function Inventory({ firestore }) {
     return (
         <div>
             <div className="title">Inventory</div>
+            {inventory ? <div className="total">{getArrayTotal(inventory)}</div> : null}
+
             <table className="list">
                 <thead>
                     <tr>
