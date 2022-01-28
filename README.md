@@ -3,6 +3,7 @@
 
 ### Features:
 - Create Shipments
+- Perform CRUD through Firebase to save shipments
 
 ### View Frontend Project at:
 [https://image-spacestagram.netlify.app](https://image-spacestagram.netlify.app)
