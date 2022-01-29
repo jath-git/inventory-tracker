@@ -109,7 +109,7 @@ const getArrayTotal = (array) => {
         if (isNaN(item.price)) {
             return `Total: ${padDollar(0)}`;
         }
-        total += roundDollar(item.price) * item.quantity;
+        total += item.price * item.quantity;
     }
     return `Total: ${padDollar(total)}`;
 }
