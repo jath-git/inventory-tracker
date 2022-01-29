@@ -2,7 +2,7 @@
 // https://inventory-tracker-app.netlify.app
 
 import React from 'react';
-import { translateRef, addCollection, updateCollection, showHideCaption } from '../Helper';
+import { translateRef, addCollection, updateCollection, showHideCaption, roundDollar } from '../Helper';
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from "firebase/compat/app";
 
@@ -26,7 +26,7 @@ export default function Form({ inputs, firestore, caption }) {
     const addExisting = newInventory => {
         for (let i of inventory) {
             if (i.product === newInventory.product) {
-                if (i.price === newInventory.price) {
+                if (roundDollar(i.price) === roundDollar(newInventory.price)) {
                     updateCollection(collectionInventory, i.id, { quantity: i.quantity + newInventory.quantity });
                     updateCollection(collectionInventory, i.id, { timeStamp: firebase.firestore.FieldValue.serverTimestamp() });
                 } else {

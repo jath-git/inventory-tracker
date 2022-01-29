@@ -14,7 +14,11 @@ const copyArr = (arr, removeIdx) => {
 }
 
 const padDollar = number => {
-    return `$ ${(Math.round(number * 100) / 100).toFixed(2)}`
+    return `$ ${roundDollar(number)}`;
+}
+
+const roundDollar = number => {
+    return (Math.round(number * 100) / 100).toFixed(2);
 }
 
 const showHideCaption = (caption, label) => {
@@ -68,9 +72,14 @@ const translateRef = (obj, caption) => {
         } else {
             if (!isNaN(obj[i].current.value)) {
                 if (Number(obj[i].current.value) >= 0) {
-                    newObj[i] = Number(obj[i].current.value);
+                    if (obj[i].current.value === '') {
+                        showHideCaption(caption, `${capitalize(i)} must not be empty`);
+                        return null;
+                    } else {
+                        newObj[i] = Number(obj[i].current.value);
+                    }
                 } else {
-                    showHideCaption(caption, `${capitalize(i)} must be non-negative`);
+                    showHideCaption(caption, `${capitalize(i)} must not be non-negative`);
                     return null;
                 }
             } else {
@@ -105,4 +114,4 @@ const getArrayTotal = (array) => {
     return `Total: ${padDollar(total)}`;
 }
 
-export { copyArr, showHideCaption, capitalize, addCollection, updateCollection, deleteCollection, deleteAllCollection, addAllCollection, translateRef, reverseArr, getArrayTotal, padDollar };
+export { copyArr, showHideCaption, capitalize, addCollection, updateCollection, deleteCollection, deleteAllCollection, addAllCollection, translateRef, reverseArr, getArrayTotal, padDollar, roundDollar };
