@@ -3,14 +3,10 @@
 
 import React from 'react';
 import { updateCollection, deleteCollection, padDollar, getArrayTotal } from '../Helper';
-import { useCollectionData } from "react-firebase-hooks/firestore";
 
-export default function Inventory({ firestore }) {
+export default function Inventory({ firestore, inventory }) {
     // retrieve inventory
     const collectionInventory = firestore.collection('inventoryList');
-    const [inventory] = useCollectionData(collectionInventory.orderBy("timeStamp"), {
-        idField: "id",
-    });
 
     // change current quantity by 1
     // delete inventory if not enough inventory

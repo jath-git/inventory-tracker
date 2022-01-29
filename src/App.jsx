@@ -39,7 +39,8 @@ export default function App() {
     // create references and data arrays used in multiple components
     const caption = useRef();
     let shipment = [];
-    const [inventory] = useCollectionData(firestore.collection('inventoryList').orderBy("timeStamp"), {
+    let inventory = [];
+    const [badOrderInventory] = useCollectionData(firestore.collection('inventoryList').orderBy("timeStamp"), {
         idField: "id",
     });
     const inputs = {
@@ -50,9 +51,10 @@ export default function App() {
 
     // order inventory when loaded
     // reduce inventory to only have shipped products
-    if (inventory) {
-        reverseArr(inventory);
-        for (let i of inventory) {
+    if (badOrderInventory) {
+        reverseArr(badOrderInventory);
+        for (let i of badOrderInventory) {
+            inventory.push(i);
             if (i.ship) {
                 shipment.push(i);
             }
@@ -75,7 +77,7 @@ export default function App() {
                     <tbody>
                         <tr>
                             <td width="50%">
-                                <Inventory firestore={firestore} />
+                                <Inventory firestore={firestore} inventory={inventory} />
                             </td>
 
                             <td width="50%">
