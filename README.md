@@ -1,14 +1,11 @@
+### The 1 Technology I Practiced is:
+## Firebase
+
+- Web application that allows to track inventory by adding, modifying, deleting products
+- Ability to create shipment of current inventory and permanently save it in history of shipments
+
 ### This App is Deployed. See Live Site at:
 [https://inventory-tracker-app.netlify.app](https://inventory-tracker-app.netlify.app)
-
-### Features:
-- Create Shipments
-- Perform CRUD through Firebase to save shipments
-
-### View Frontend Project at:
-[https://image-spacestagram.netlify.app](https://image-spacestagram.netlify.app)
-
-<br/>
 
 ### Instructions
 Must have Node.js and NPM installed on you computer
